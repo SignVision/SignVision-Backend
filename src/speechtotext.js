@@ -2,11 +2,11 @@ const speech = require('@google-cloud/speech');
 const fs = require('fs');
 
 // speech to text function
-async function speechtotext() {
+async function speechtotext(mp3) {
     const client = new speech.SpeechClient();
     const filename = './test.mp3';
     
-    const file = fs.readFileSync(filename);
+    const file = mp3;
     const audioBytes = file.toString('base64');
     
     const audio = {

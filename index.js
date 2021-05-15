@@ -11,27 +11,32 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/img_to_char', async (req, res) => {
     try {
         const r = req.body;
-        
+        var imgData = r.image;
+        var base64Data = imgData.replace(/^data:image\/png;base64,/, "");
+
+        fs.writeFile("out.png", base64Data, 'base64',
+            function(err, data) {
+                if (err) {
+                    console.log('err', err);
+                }
+                console.log('success');
+
+            });
+
+        let c = await img_to_char("out.png");
+
+        res.send({ char: c })
+
 
     } catch (error) {
-        
+        res.send({ char: ''})
     }
 })
 
-app.post('/speech_to_text', async (req, res) => {
+app.post('/speech_to_sl', async (req, res) => {
     try {
         const r = req.body;
-        
-
-    } catch (error) {
-        
-    }
-})
-
-app.post('/video_to_text', async (req, res) => {
-    try {
-        const r = req.body;
-        
+        let text = await speech_to_text(r.mp3);
 
     } catch (error) {
         

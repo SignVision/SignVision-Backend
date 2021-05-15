@@ -8,7 +8,7 @@ import sys
 def evaluate(filename):
     new_model = tf.keras.models.load_model('./model/my-model.h5')
 
-    img = keras.preprocessing.image.load_img(filename)
+    img = keras.preprocessing.image.load_img("../" + filename)
     img_array = keras.preprocessing.image.img_to_array(img)
     img_batch = np.expand_dims(img_array, axis=0)
     img_preprocessed = tf.keras.applications.resnet50.preprocess_input(img_batch)
@@ -21,7 +21,7 @@ def evaluate(filename):
                 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
 
-    print(prediction)
+    print(outputs[prediction])
 
 
 if __name__ == "__main__":
