@@ -36,26 +36,24 @@ const corsOptions = {
 }
 
 
-
 app.post('/login', cors(corsOptions), async (req, res) => {
     try {
-        
+        const send = await auth.login(req.body.username, req.body.password);
+        res.send(send);
         
     } catch (error) {
-    
+        console.log(error);
+        res.send({ accessToken: null, err: 3 })
     }
 })
 
 app.post('/register', cors(corsOptions), async (req, res) => {
     try {
-        
+        const r = await auth.register(req.body.username, req.body.password, req.body.first_name, req.body.last_name);
+        res.send({ err: r })
 
     } catch (error) {
-        
+        res.send({ err: 2 });
     }
 })
 
-
-module.exports = {
-
-}
