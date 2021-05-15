@@ -1,0 +1,35 @@
+Login
+Route: /login
+Type: Post
+
+body: { 
+    username: string
+    password: string 
+}
+Return: 
+Accepted: { accessToken: string } 
+Rejected: { accessToken: null, err: int }
+Errors: 0 -> No error
+	1 -> User does not exist
+	2 -> Misc 
+	3 -> User is not verified
+
+////////////////////////////////////////
+
+Register
+Route: /register
+Type: Post
+
+body: { 
+    username: string
+    password: string 
+}
+
+Return: 
+Accepted: { err: 0 } 
+Rejected: { err: int }
+Errors: 0 -> No error
+	1 -> User already exists
+	2 -> Misc error
+
+////////////////////////////////////////
