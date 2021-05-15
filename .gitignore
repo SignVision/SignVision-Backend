@@ -1,4 +1,5 @@
 Model Training/data/
+Model Training/model/my-model2.h5
 
 # Logs
 logs
