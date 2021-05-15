@@ -6,9 +6,9 @@ import sys
 
 
 def evaluate(filename):
-    new_model = tf.keras.models.load_model('./Model Training/model/my-model.h5')
+    new_model = tf.keras.models.load_model('./model/my-model.h5')
 
-    img = keras.preprocessing.image.load_img(filepath)
+    img = keras.preprocessing.image.load_img(filename)
     img_array = keras.preprocessing.image.img_to_array(img)
     img_batch = np.expand_dims(img_array, axis=0)
     img_preprocessed = tf.keras.applications.resnet50.preprocess_input(img_batch)
