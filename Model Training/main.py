@@ -80,4 +80,5 @@ model.compile(optimizer='rmsprop',
 
 model.summary()
 
-model.fit(train_gen, epochs=20, callbacks=[early_stop])
+model.fit(train_gen, epochs=12, callbacks=[early_stop])
+model.save('./Model Training/model/my-model.h5')
