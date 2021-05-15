@@ -1,0 +1,23 @@
+Image to character
+Route: /img_to_char
+Type: Post
+
+body: {
+    img: Base64 Image
+}
+Return:
+{ char: string }
+
+////////////////////////////////////////
+
+Speech to Sign Language
+Route: /speech_to_sl
+Type: Post
+
+body: {
+    mp3: MP3
+}
+Return:
+{ text: string }
+
+////////////////////////////////////////
