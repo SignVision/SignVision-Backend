@@ -1,4 +1,4 @@
-functions/Model Training/data/
+data/
 functions/Model Training/model/my-model2.h5
 functions/key.json
 config.js
