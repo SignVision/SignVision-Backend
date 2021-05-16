@@ -8,9 +8,9 @@ import cv2
 
 def evaluate(filename):
     
-    new_model = tf.keras.models.load_model('./model/model.tflite')
+    new_model = tf.keras.models.load_model('./Model Training/model/my-model2.h5')
 
-    temp_img = cv2.imread('../'+filename)
+    temp_img = cv2.imread('./'+filename)
     temp_img = cv2.resize(temp_img, (32, 32))  
 
     img_array = keras.preprocessing.image.img_to_array(temp_img)
