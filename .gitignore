@@ -1,5 +1,7 @@
-Model Training/data/
-Model Training/model/my-model2.h5
+functions/Model Training/data/
+functions/Model Training/model/my-model2.h5
+functions/key.json
+config.js
 
 # Logs
 logs
