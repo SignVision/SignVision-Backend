@@ -2,20 +2,19 @@ const axios = require('axios');
 const fs = require('fs');
 
 
-fs.readFile('./ctest.jpg', 'base64', (err, data) => {
+fs.readFile('./test.mp3', 'base64', (err, data) => {
     if (err) {
       console.error(err)
       return
     }
     else {
-        axios.post('http://167.99.119.124:3000/img_to_char', {
+        axios.post('http://localhost:3000/speech_to_sl', {
             image:  data
           })
           .then((response) => {
             console.log(response.data);
           }, (error) => {
-            console.log('a')
-            //console.log(error);
+            console.log(error);
           });
     }
     
