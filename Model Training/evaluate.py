@@ -7,7 +7,7 @@ import cv2
 
 
 def evaluate(filename):
-    new_model = tf.keras.models.load_model('./Model Training/model/my-model2.h5')
+    new_model = tf.keras.models.load_model('./Model Training/model/model.tflite')
 
     temp_img = cv2.imread('./'+filename)
     temp_img = cv2.resize(temp_img, (32, 32))  
