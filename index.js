@@ -28,7 +28,7 @@ app.post('/img_to_char', async (req, res) => {
             });
         
         
-        const pythonProcess = spawn('python', ["./Model Training/evaluate.py", 'out.jpg']);
+        const pythonProcess = spawn('python3', ["./Model Training/evaluate.py", 'out.jpg']);
              
         pythonProcess.stderr.on('data', (data) => {
             console.error(`stderr: ${data}`);

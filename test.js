@@ -8,13 +8,14 @@ fs.readFile('./ctest.jpg', 'base64', (err, data) => {
       return
     }
     else {
-        axios.post('http://localhost:3000/img_to_char', {
+        axios.post('http://167.99.119.124:3000/img_to_char', {
             image:  data
           })
           .then((response) => {
             console.log(response.data);
           }, (error) => {
-            console.log(error);
+            console.log('a')
+            //console.log(error);
           });
     }
     
