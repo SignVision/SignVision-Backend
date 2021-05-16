@@ -1,5 +1,5 @@
 const speech = require('@google-cloud/speech');
-const KEY = require('../config.js').KEY;
+
 
 // speech to text function
 async function speechtotext(mp3) {
